@@ -1,9 +1,9 @@
 /****
 * Modul: Algorithmen und Datenstrukturen im SoSe 2025
-* Gruppe <NR>
+* Gruppe 7
 * Praktikum 1
-* Datum: <AbgabeDatum>
-* Version <z.B. 0.1>
+* Datum: 22.04.2025
+* Version
 * Klasse "Line" zur Darstellung einer Gerade durch zwei Punkte (x1|y1) und (x2|y2).
 * @author De Terminante, Beta, 11012345
 * @author Bo, Harry, 11012346
