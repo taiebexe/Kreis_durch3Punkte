@@ -1,12 +1,12 @@
 /**
 * Modul: Algorithmen und Datenstrukturen im SoSe 2025
-* Gruppe <NR>
+* Gruppe 07
 * Praktikum 1
-* Datum: <AbgabeDatum>
+* Datum: 24.04.2025
 * Version <z.B. 0.1>
 * Klasse "Point" zur Darstellung von Punkten in der Form P (x|y).
-* @author De Terminante, Beta, 11012345
-* @author Bo, Harry, 11012346
+* @author Taieb Bourbia ,11379890
+ * @author Osama Shahin ,
 */
 
 

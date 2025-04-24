@@ -1,12 +1,12 @@
 /**
 * Modul: Algorithmen und Datenstrukturen im SoSe 2025
-* Gruppe <NR>
+* Gruppe 07
 * Praktikum 1
-* Datum: <AbgabeDatum>
+* Datum: 24.04.2025
 * Version <z.B. 0.1>
 * Klasse "Circle" zur Darstellung eines Kreises durch den Mittelpunkt (x|y) und den Radius r.
-* @author Taieb Bourbia , Beta, 11012345
-* @author Bo, Harry, 11012346
+* @author Taieb Bourbia ,11379890
+* @author Osama Shahin ,
 */
 
 
