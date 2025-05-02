@@ -43,7 +43,7 @@ class Line {
 	 */
 	public Point meets(Line that) {
 		double det = this.A * that.B - that.A * this.B;
-		if (Math.abs(det) < 1e-10) return null;
+		if (Math.abs(det) < 1e-10) return null;//für werte die fast 0 sind
 		double x = (this.B * that.C - that.B * this.C) / det;
 		double y = (that.A * this.C - this.A * that.C) / det;
 		return new Point(x, y);
