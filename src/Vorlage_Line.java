@@ -35,18 +35,35 @@ class Line {
 
 	public double getA() { return A; }
 	public double getB() { return B; }
+	public double getC() { return C; }
+
 
 	/**
-	 * Berechnet den Schnittpunkt mit einer anderen Geraden.
-	 * @param that die andere Gerade
-	 * @return Schnittpunkt als Point oder null, wenn parallel
+	 * Berechnet den Schnittpunkt dieser Linie mit einer anderen Linie.
+	 * Gibt den Schnittpunkt als {@code Point} zurück oder {@code null}, falls die Linien parallel sind.
+	 *
+	 * @param that Die zweite Linie, mit der der Schnittpunkt berechnet werden soll.
+	 * @return Der Schnittpunkt beider Linien als {@code Point}, oder {@code null}, wenn sie parallel sind.
 	 */
 	public Point meets(Line that) {
-		double det = this.A * that.B - that.A * this.B;
-		if (Math.abs(det) < 1e-10) return null;//für werte die fast 0 sind
-		double x = (this.B * that.C - that.B * this.C) / det;
-		double y = (that.A * this.C - this.A * that.C) / det;
-		return new Point(x, y);
+		// Toleranzwert für numerische Stabilität
+		double epsilon = 1e-10;
+
+		// Berechne den Nenner der Determinante
+		double nenner = that.getA() * this.getB() - this.getA() * that.getB();
+
+		// Falls der Nenner (≈ Determinante) nahezu 0 ist, sind die Geraden parallel
+		if (Math.abs(nenner) < epsilon) {
+			System.out.println("Die Linien sind parallel – Es konnte kein Schnittpunkt berechnet werden.");
+			return null;
+		}
+
+		// Berechne die x- und y-Koordinaten des Schnittpunkts
+		double xS = (that.getB() * this.getC() - that.getC() * this.getB()) / nenner;
+		double yS = (that.getC() * this.getA() - that.getA() * this.getC()) / nenner;
+
+		// Gib den Schnittpunkt zurück
+		return new Point(xS, yS);
 	}
 
 	@Override

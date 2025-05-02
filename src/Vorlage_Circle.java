@@ -59,6 +59,7 @@ class Circle {
 		Point s1 = new Point(xm + rx, ym + ry);
 		Point s2 = new Point(xm - rx, ym - ry);
 
+
 		// Gerade durch beide Schnittpunkte
 		return new Line(s1, s2);
 	}

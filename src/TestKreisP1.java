@@ -23,14 +23,26 @@ class TestKreisP1 {
 		Scanner scanner = new Scanner(System.in);
 
 		// 1. Punkte einlesen
-		System.out.println("Geben Sie Punkt A (x y) ein:");
-		Point A = new Point(scanner.nextDouble(), scanner.nextDouble());
+		System.out.println("Punkt A:");
+		System.out.print("x = ");
+		double ax = scanner.nextDouble();
+		System.out.print("y = ");
+		double ay = scanner.nextDouble();
+		Point A = new Point(ax, ay);
 
-		System.out.println("Geben Sie Punkt B (x y) ein:");
-		Point B = new Point(scanner.nextDouble(), scanner.nextDouble());
+		System.out.println("Punkt B:");
+		System.out.print("x = ");
+		double bx = scanner.nextDouble();
+		System.out.print("y = ");
+		double by = scanner.nextDouble();
+		Point B = new Point(bx, by);
 
-		System.out.println("Geben Sie Punkt C (x y) ein:");
-		Point C = new Point(scanner.nextDouble(), scanner.nextDouble());
+		System.out.println("Punkt C:");
+		System.out.print("x = ");
+		double cx = scanner.nextDouble();
+		System.out.print("y = ");
+		double cy = scanner.nextDouble();
+		Point C = new Point(cx, cy);
 
 		// 2. Abbruch, falls Punkte gleich sind
 		if (A.equalTo(B) || A.equalTo(C) || B.equalTo(C)) {
