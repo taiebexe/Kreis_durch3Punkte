@@ -22,35 +22,46 @@ class Circle {
 	public double getRadius() { return radius; }//habe nicht benutzt
 	public Point getMiddle() { return middle; } //habe nicht benutzt
 
-	public Line intersects(Circle pc) {
-		Point p0 = this.middle;
-		Point p1 = pc.middle;
-		double r0 = this.radius;
-		double r1 = pc.radius;
+	/**
+	 * Berechnet die Gerade durch die zwei Schnittpunkte mit einem anderen Kreis.
+	 * Gibt null zurück, wenn keine echten Schnittpunkte existieren.
+	 */
+	public Line intersects(Circle other) {
+		// Mittelpunkt- und Radiusdaten
+		Point m1 = this.middle;
+		Point m2 = other.middle;
+		double r1 = this.radius;
+		double r2 = other.radius;
 
-		double dx = p1.getX() - p0.getX();
-		double dy = p1.getY() - p0.getY();
-		double d = Math.sqrt(dx * dx + dy * dy);
+		// Abstand zwischen den Mittelpunkten
+		double dx = m2.getX() - m1.getX();
+		double dy = m2.getY() - m1.getY();
+		double d = Math.hypot(dx, dy); // gleiche wie sqrt(dx*dx + dy*dy), aber stabiler
 
-		if (d > r0 + r1 || d < Math.abs(r0 - r1) || d == 0) {
-			return null; // No intersection
+		// Prüfen, ob Schnitt möglich ist
+		if (d > r1 + r2 || d < Math.abs(r1 - r2) || d == 0) {
+			return null; // Kein Schnitt
 		}
 
-		double a = (r0 * r0 - r1 * r1 + d * d) / (2 * d);
-		double h = Math.sqrt(r0 * r0 - a * a);
+		// Punkt auf der Linie zwischen den Mittelpunkten, wo Schnittlinie kreuzt
+		double a = (r1 * r1 - r2 * r2 + d * d) / (2 * d);
+		double h = Math.sqrt(r1 * r1 - a * a);
 
-		double xm = p0.getX() + a * dx / d;
-		double ym = p0.getY() + a * dy / d;
+		// Koordinaten des Schnittmittelpunkts (Basislinie)
+		double xm = m1.getX() + a * dx / d;
+		double ym = m1.getY() + a * dy / d;
 
+		// Abstand senkrecht zur Verbindungslinie
 		double rx = -dy * (h / d);
 		double ry = dx * (h / d);
 
-		Point p2 = new Point(xm + rx, ym + ry);
-		Point p3 = new Point(xm - rx, ym - ry);
+		// Zwei echte Schnittpunkte
+		Point s1 = new Point(xm + rx, ym + ry);
+		Point s2 = new Point(xm - rx, ym - ry);
 
-		return new Line(p2, p3);
+		// Gerade durch beide Schnittpunkte
+		return new Line(s1, s2);
 	}
-
 	public String toString() {
 		return "Kreis(Mittelpunkt: " + middle + ", Radius: " + radius + ")";
 	}
