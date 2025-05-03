@@ -53,9 +53,9 @@ class TestKreisP1 {
 		// 3. Hilfskreise mit geeigneten Radien konstruieren
 		double ab = A.distanceTo(B);
 		double bc = B.distanceTo(C);
-		double r1 = ab * 0.6;
-		double r2 = ab * 0.6;
-		double r3 = bc * 0.6;
+		double r1 = ab * 1.1;
+		double r2 = ab * 1.1;
+		double r3 = bc * 1.1;
 
 		Circle K1 = new Circle(A, r1);
 		Circle K2 = new Circle(B, r2);
