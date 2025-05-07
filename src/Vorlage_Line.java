@@ -6,7 +6,7 @@
 * Version
 * Klasse "Line" zur Darstellung einer Gerade durch zwei Punkte (x1|y1) und (x2|y2).
 * @author Taieb Bourbia ,11379890
- *@author Osama Shahin ,
+ *@author Osama Shahin , 11438267
 */
 
 class Line {

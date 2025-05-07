@@ -6,7 +6,7 @@
 * Version <z.B. 0.1>
 * Klasse "Point" zur Darstellung von Punkten in der Form P (x|y).
 * @author Taieb Bourbia ,11379890
- * @author Osama Shahin ,
+ * @author Osama Shahin ,11438267
 */
 
 
