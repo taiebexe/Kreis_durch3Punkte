@@ -44,8 +44,9 @@ class Circle {
 		}
 
 		// Punkt auf der Linie zwischen den Mittelpunkten, wo Schnittlinie kreuzt
-		double a = (r1 * r1 - r2 * r2 + d * d) / (2 * d);
-		double h = Math.sqrt(r1 * r1 - a * a);
+
+		double a = (r1 * r1 - r2 * r2 + d * d) / (2 * d); //a ist der horizontale Abstand vom Mittelpunkt m1 zur Basislinie
+		double h = Math.sqrt(r1 * r1 - a * a);//h ist der senkrechte Abstand von der Basislinie zu den tatsächlichen Schnittpunkten.
 
 		// Koordinaten des Schnittmittelpunkts (Basislinie)
 		double xm = m1.getX() + a * dx / d;
@@ -56,8 +57,8 @@ class Circle {
 		double ry = dx * (h / d);
 
 		// Zwei echte Schnittpunkte
-		Point s1 = new Point(xm + rx, ym + ry);
-		Point s2 = new Point(xm - rx, ym - ry);
+		Point s1 = new Point(xm + rx, ym + ry);//obere schnittpunkt
+		Point s2 = new Point(xm - rx, ym - ry);//untere schnittpunkt
 
 
 		// Gerade durch beide Schnittpunkte
